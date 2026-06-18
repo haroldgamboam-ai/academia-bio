@@ -1,100 +1,437 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia Bio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia Bio | Conocimiento que transforma el campo</title>
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            margin:0;
-            padding:0;
-            background:#f4f8f4;
-            color:#333;
-        }
+  <style>
+    :root{
+      --green-dark:#0f4d38;
+      --green:#1f7a55;
+      --green-light:#8bc53f;
+      --cream:#f4f7f2;
+      --text:#1f2933;
+      --muted:#5f6c72;
+      --white:#ffffff;
+    }
 
-        header{
-            background:#2d6a4f;
-            color:white;
-            text-align:center;
-            padding:80px 20px;
-        }
+    *{box-sizing:border-box}
 
-        header h1{
-            margin:0;
-            font-size:3em;
-        }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--cream);
+      line-height:1.5;
+    }
 
-        header p{
-            max-width:800px;
-            margin:20px auto;
-            font-size:1.2em;
-        }
+    header{
+      background:var(--white);
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+    }
 
-        section{
-            max-width:1200px;
-            margin:auto;
-            padding:60px 20px;
-        }
+    .logo{
+      font-weight:800;
+      font-size:1.4rem;
+      color:var(--green-dark);
+    }
 
-        .cards{
-            display:flex;
-            gap:20px;
-            flex-wrap:wrap;
-        }
+    nav a{
+      margin-left:22px;
+      text-decoration:none;
+      color:var(--text);
+      font-weight:600;
+      font-size:.95rem;
+    }
 
-        .card{
-            background:white;
-            padding:25px;
-            border-radius:10px;
-            flex:1;
-            min-width:250px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.1);
-        }
+    .btn{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:700;
+      margin:8px 8px 0 0;
+    }
 
-        footer{
-            background:#1b4332;
-            color:white;
-            text-align:center;
-            padding:30px;
-        }
-    </style>
+    .btn-primary{
+      background:var(--green-light);
+      color:#102015;
+    }
+
+    .btn-secondary{
+      border:2px solid var(--white);
+      color:var(--white);
+    }
+
+    .hero{
+      background:linear-gradient(135deg,var(--green-dark),var(--green));
+      color:var(--white);
+      padding:90px 8% 60px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin:0;
+      line-height:1;
+    }
+
+    .hero h2{
+      font-size:2rem;
+      margin:18px 0;
+      color:#eaf7df;
+    }
+
+    .hero p{
+      font-size:1.15rem;
+      max-width:650px;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:24px;
+      padding:32px;
+    }
+
+    .flow-item{
+      background:rgba(255,255,255,.15);
+      margin:12px 0;
+      padding:14px 18px;
+      border-radius:14px;
+      font-weight:700;
+    }
+
+    .support{
+      background:var(--white);
+      padding:30px 8%;
+      text-align:center;
+    }
+
+    .support p{
+      color:var(--muted);
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    .logos{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+
+    .logo-box{
+      width:180px;
+      height:70px;
+      border:1px dashed #cbd5d1;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-weight:700;
+      background:#fafafa;
+    }
+
+    section{
+      padding:70px 8%;
+    }
+
+    section h2{
+      font-size:2.2rem;
+      color:var(--green-dark);
+      margin-bottom:16px;
+    }
+
+    .intro{
+      max-width:780px;
+      color:var(--muted);
+      font-size:1.05rem;
+      margin-bottom:35px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:var(--white);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+
+    .card h3{
+      color:var(--green-dark);
+      margin-top:0;
+    }
+
+    .model{
+      background:var(--white);
+    }
+
+    .model-flow{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .step{
+      border-left:6px solid var(--green-light);
+      background:var(--cream);
+      padding:24px;
+      border-radius:14px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#e5f4dc;
+      color:var(--green-dark);
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:.85rem;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .timeline{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:16px;
+    }
+
+    .month{
+      background:var(--white);
+      padding:20px;
+      border-radius:14px;
+      border-top:5px solid var(--green-light);
+    }
+
+    .cta{
+      background:var(--green-dark);
+      color:var(--white);
+      text-align:center;
+    }
+
+    .cta h2{
+      color:var(--white);
+    }
+
+    footer{
+      background:#073324;
+      color:var(--white);
+      padding:35px 8%;
+      text-align:center;
+    }
+
+    @media(max-width:850px){
+      .hero{
+        grid-template-columns:1fr;
+        padding-top:60px;
+      }
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      nav{
+        display:none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Academia Bio</h1>
-    <p>
-        Formación, validación y transferencia de conocimiento para impulsar
-        el desarrollo de bioinsumos y la agricultura sostenible en América Latina.
-    </p>
+  <div class="logo">Academia Bio</div>
+  <nav>
+    <a href="#iniciativa">La iniciativa</a>
+    <a href="#cultivos">Cultivos</a>
+    <a href="#tecnologias">Tecnologías</a>
+    <a href="#webinars">Webinars</a>
+    <a href="#aliados">Aliados</a>
+  </nav>
 </header>
 
-<section>
-    <h2>Áreas de trabajo</h2>
+<section class="hero">
+  <div>
+    <h1>Academia Bio</h1>
+    <h2>Conocimiento que transforma el campo</h2>
+    <p>
+      Una iniciativa que conecta formación técnica, validación en condiciones reales
+      y transferencia de conocimiento para fortalecer la adopción efectiva de bioinsumos.
+    </p>
+    <a class="btn btn-primary" href="#cultivos">Explorar por cultivo</a>
+    <a class="btn btn-secondary" href="#tecnologias">Explorar por tecnología</a>
+  </div>
 
-    <div class="cards">
-        <div class="card">
-            <h3>Formación</h3>
-            <p>Diplomados, cursos y programas especializados.</p>
-        </div>
+  <div class="hero-card">
+    <div class="flow-item">Generación de conocimiento</div>
+    <div class="flow-item">Validación técnica en campo</div>
+    <div class="flow-item">Transferencia efectiva</div>
+    <div class="flow-item">Adopción con resultados</div>
+  </div>
+</section>
 
-        <div class="card">
-            <h3>Validación</h3>
-            <p>Experiencias y evidencia generada en condiciones reales de campo.</p>
-        </div>
+<div class="support" id="aliados">
+  <p>Una iniciativa apoyada por</p>
+  <div class="logos">
+    <div class="logo-box">ASOBIOCOL</div>
+    <div class="logo-box">PHB</div>
+    <div class="logo-box">IICA</div>
+  </div>
+</div>
 
-        <div class="card">
-            <h3>Transferencia</h3>
-            <p>Conexión entre ciencia, innovación y productores.</p>
-        </div>
+<section id="iniciativa">
+  <h2>¿Por qué nace Academia Bio?</h2>
+  <p class="intro">
+    El sector de los bioinsumos enfrenta una brecha entre la generación de conocimiento,
+    la validación técnica y la adopción efectiva en campo. Academia Bio busca cerrar esa
+    brecha mediante contenidos prácticos, evidencia y articulación entre actores.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Conocimiento disponible</h3>
+      <p>Existe una creciente oferta de investigación, productos y capacidades técnicas.</p>
     </div>
+
+    <div class="card">
+      <h3>Validación dispersa</h3>
+      <p>La evidencia de campo no siempre está organizada ni disponible para los usuarios.</p>
+    </div>
+
+    <div class="card">
+      <h3>Adopción inconsistente</h3>
+      <p>El uso sin acompañamiento técnico genera resultados variables y pérdida de confianza.</p>
+    </div>
+  </div>
+</section>
+
+<section class="model">
+  <h2>Modelo Academia Bio</h2>
+  <p class="intro">
+    Un modelo de formación y transferencia que conecta ciencia, experiencia empresarial
+    y necesidades reales de productores, técnicos y extensionistas.
+  </p>
+
+  <div class="model-flow">
+    <div class="step">
+      <span class="tag">01</span>
+      <h3>Generación de conocimiento</h3>
+      <p>Investigación, innovación y desarrollo tecnológico en bioinsumos.</p>
+    </div>
+
+    <div class="step">
+      <span class="tag">02</span>
+      <h3>Validación técnica</h3>
+      <p>Evidencia y resultados observados bajo condiciones reales de campo.</p>
+    </div>
+
+    <div class="step">
+      <span class="tag">03</span>
+      <h3>Transferencia</h3>
+      <p>Webinars, recursos técnicos, microaprendizaje y acompañamiento.</p>
+    </div>
+
+    <div class="step">
+      <span class="tag">04</span>
+      <h3>Resultados en campo</h3>
+      <p>Mejor adopción, mayor confianza y uso adecuado de las tecnologías.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cultivos">
+  <h2>Explorar por cultivo</h2>
+  <p class="intro">
+    Contenidos técnicos organizados por sistemas productivos priorizados.
+  </p>
+
+  <div class="grid">
+    <div class="card"><h3>Aguacate Hass</h3><p>Manejo integrado con bioinsumos.</p></div>
+    <div class="card"><h3>Arroz</h3><p>Soluciones biológicas para sistemas arroceros.</p></div>
+    <div class="card"><h3>Banano</h3><p>Bioinsumos para sanidad, nutrición y estrés.</p></div>
+    <div class="card"><h3>Berries</h3><p>Arándanos, uchuva y fresa.</p></div>
+    <div class="card"><h3>Café</h3><p>Aplicaciones técnicas para sistemas cafeteros.</p></div>
+    <div class="card"><h3>Flores</h3><p>Bioinsumos para sistemas ornamentales.</p></div>
+  </div>
+</section>
+
+<section id="tecnologias" class="model">
+  <h2>Explorar por tecnología</h2>
+  <p class="intro">
+    Una segunda ruta de navegación para acceder a los contenidos según el tipo de solución biológica.
+  </p>
+
+  <div class="grid">
+    <div class="card"><h3>Biocontrol</h3><p>Manejo de plagas y enfermedades.</p></div>
+    <div class="card"><h3>Biofertilización</h3><p>Procesos biológicos asociados a nutrición vegetal.</p></div>
+    <div class="card"><h3>Bioestimulación</h3><p>Mejor desempeño fisiológico y vigor del cultivo.</p></div>
+    <div class="card"><h3>Estrés abiótico</h3><p>Herramientas para enfrentar condiciones ambientales adversas.</p></div>
+    <div class="card"><h3>Manejo integrado</h3><p>Uso de bioinsumos dentro de estrategias agronómicas completas.</p></div>
+  </div>
+</section>
+
+<section id="webinars">
+  <h2>Programación de webinars 2026</h2>
+  <p class="intro">
+    Primera programación técnica organizada por cultivo.
+  </p>
+
+  <div class="timeline">
+    <div class="month"><strong>Julio</strong><br>Aguacate Hass</div>
+    <div class="month"><strong>Agosto</strong><br>Arroz</div>
+    <div class="month"><strong>Septiembre</strong><br>Banano</div>
+    <div class="month"><strong>Octubre</strong><br>Berries</div>
+    <div class="month"><strong>Noviembre</strong><br>Café</div>
+    <div class="month"><strong>Diciembre</strong><br>Flores</div>
+  </div>
+</section>
+
+<section>
+  <h2>Biblioteca técnica</h2>
+  <p class="intro">
+    Repositorio de webinars, presentaciones, guías, infografías y materiales descargables
+    para apoyar la toma de decisiones en campo.
+  </p>
+
+  <div class="grid">
+    <div class="card"><h3>Webinars</h3><p>Grabaciones y sesiones técnicas.</p></div>
+    <div class="card"><h3>Guías técnicas</h3><p>Documentos prácticos para consulta.</p></div>
+    <div class="card"><h3>Casos de validación</h3><p>Resultados y experiencias en campo.</p></div>
+    <div class="card"><h3>Material descargable</h3><p>Infografías, fichas y recursos visuales.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Construyamos juntos una mejor adopción de bioinsumos</h2>
+  <p>
+    Empresas, técnicos, productores y extensionistas pueden ser parte de Academia Bio.
+  </p>
+  <a class="btn btn-primary" href="mailto:direccionejecutiva@asobiocol.org">Participar en Academia Bio</a>
 </section>
 
 <footer>
-    Academia Bio © 2026
+  <p>Academia Bio © 2026</p>
+  <p>ASOBIOCOL · Plataforma Hemisférica de Bioinsumos · IICA</p>
 </footer>
 
 </body>
