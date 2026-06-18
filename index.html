@@ -39,10 +39,9 @@
     }
 
     .logo{
-      font-weight:800;
-      font-size:1.4rem;
-      color:var(--green-dark);
-    }
+  display:flex;
+  align-items:center;
+}
 
     nav a{
       margin-left:22px;
@@ -260,7 +259,11 @@
 <body>
 
 <header>
-  <div class="logo">Academia Bio</div>
+  <div class="logo">
+    <img src="academia-bio-logo.png.png"
+         alt="Academia Bio"
+         style="height:90px;">
+</div>
   <nav>
     <a href="#iniciativa">La iniciativa</a>
     <a href="#cultivos">Cultivos</a>
@@ -292,11 +295,23 @@
 
 <div class="support" id="aliados">
   <p>Una iniciativa apoyada por</p>
+
   <div class="logos">
-    <div class="logo-box">ASOBIOCOL</div>
-    <div class="logo-box">PHB</div>
-    <div class="logo-box">IICA</div>
+
+    <img src="asobiocol-logo.png.png"
+         alt="ASOBIOCOL"
+         style="height:70px; width:auto;">
+
+    <img src="phb-logo.png.png"
+         alt="PHB"
+         style="height:90px; width:auto;">
+
+    <img src="iica-logo.jpg.jpg"
+         alt="IICA"
+         style="height:80px; width:auto;">
+
   </div>
+
 </div>
 
 <section id="iniciativa">
