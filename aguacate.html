@@ -76,11 +76,40 @@ h2{
 }
 
 </style>
+.topbar{
+    background:white;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
 
+.topbar img{
+    height:110px;
+}
+
+.topbar nav a{
+    margin-left:22px;
+    text-decoration:none;
+    color:#1f2933;
+    font-weight:600;
+}
 </head>
 
 <body>
+<header class="topbar">
+  <a href="index.html">
+    <img src="assets/logos/academia-bio-logo.png.png" alt="Academia Bio">
+  </a>
 
+  <nav>
+    <a href="index.html#cultivos">Cultivos</a>
+    <a href="index.html#tecnologias">Tecnologías</a>
+    <a href="index.html#webinars">Webinars</a>
+    <a href="index.html#aliados">Aliados</a>
+  </nav>
+</header>
 <div class="hero">
 
 <img src="assets/cultivos/aguacate.jpg" alt="Aguacate Hass">
