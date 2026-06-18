@@ -175,11 +175,18 @@
     }
 
     .card{
-      background:var(--white);
-      border-radius:18px;
-      padding:28px;
-      box-shadow:0 6px 18px rgba(0,0,0,.08);
-    }
+  background:var(--white);
+  border-radius:22px;
+  padding:32px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+  border:1px solid rgba(15,77,56,.08);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 34px rgba(0,0,0,.12);
+}
 
     .card h3{
       color:var(--green-dark);
@@ -197,12 +204,13 @@
       margin-top:30px;
     }
 
-    .step{
-      border-left:6px solid var(--green-light);
-      background:var(--cream);
-      padding:24px;
-      border-radius:14px;
-    }
+   .step{
+  border-left:6px solid var(--green-light);
+  background:linear-gradient(180deg,#ffffff,#f4f7f2);
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+}
 
     .tag{
       display:inline-block;
@@ -221,12 +229,14 @@
       gap:16px;
     }
 
-    .month{
-      background:var(--white);
-      padding:20px;
-      border-radius:14px;
-      border-top:5px solid var(--green-light);
-    }
+ .month{
+  background:var(--white);
+  padding:24px;
+  border-radius:18px;
+  border-top:6px solid var(--green-light);
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+  font-weight:600;
+}
 
     .cta{
       background:var(--green-dark);
