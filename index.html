@@ -340,9 +340,11 @@
   font-size:2.8rem;
   margin-bottom:14px;
 }
-  .hero-cover{
+
+   .hero-cover{
     position:relative;
-    width:100%;
+    width:100vw;
+    margin-left:calc(50% - 50vw);
     height:78vh;
     min-height:620px;
     overflow:hidden;
@@ -358,50 +360,13 @@
 .hero-cover .hero-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.35);
-    display:flex;
-    align-items:center;
-}
-
-.hero-cover .hero-content{
-    max-width:700px;
-    margin-left:8%;
-    color:white;
-}
-
-.hero-cover .hero-content h1{
-    font-size:5rem;
-    margin-bottom:10px;
-}
-
-.hero-cover .hero-content h2{
-    color:white;
-    font-size:2.3rem;
-    margin-bottom:25px;
-}
-
-.hero-cover .hero-content p{
-    font-size:1.2rem;
-    line-height:1.7;
-    margin-bottom:35px;
-}
-    .hero-cover{
-    position:relative;
-    height:85vh;
-    min-height:650px;
-    overflow:hidden;
-}
-
-.hero-cover img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-cover .hero-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.35);
+    background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.45) 0%,
+    rgba(0,0,0,.25) 35%,
+    rgba(0,0,0,.05) 70%,
+    rgba(0,0,0,0) 100%
+);
     display:flex;
     align-items:center;
 }
@@ -454,7 +419,7 @@
   <div class="logo">
 <img src="assets/logos/academia-bio-logo.png.png"
      alt="Academia Bio"
-     style="height:110px;">
+     style="height:80px;">
 </div>
   <nav>
     <a href="#iniciativa">La iniciativa</a>
