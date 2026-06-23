@@ -82,6 +82,35 @@ h2{
   background:#f8faf9;
   border-left:5px solid #8bc53f;
 }
+  .library-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:25px;
+}
+
+.library-card{
+    background:#f8faf9;
+    border-radius:16px;
+    padding:25px;
+    text-align:center;
+    border:1px solid #e5ece8;
+    transition:.2s;
+}
+
+.library-card:hover{
+    transform:translateY(-4px);
+}
+
+.library-icon{
+    font-size:2.5rem;
+    margin-bottom:12px;
+}
+
+.library-card h3{
+    color:#0f4d38;
+    margin-bottom:10px;
+}
 </style>
 </head>
 
@@ -135,10 +164,34 @@ h2{
 
   <div class="card placeholder">
     <h2>Biblioteca técnica</h2>
-    <p>
-      Aquí estarán disponibles webinars, fichas técnicas, guías, presentaciones,
-      casos de validación y otros recursos especializados.
-    </p>
+
+<div class="library-grid">
+
+  <div class="library-card">
+      <div class="library-icon">📄</div>
+      <h3>Fichas técnicas</h3>
+      <p>Próximamente</p>
+  </div>
+
+  <div class="library-card">
+      <div class="library-icon">🎥</div>
+      <h3>Webinars</h3>
+      <p>Próximamente</p>
+  </div>
+
+  <div class="library-card">
+      <div class="library-icon">📊</div>
+      <h3>Casos de validación</h3>
+      <p>Próximamente</p>
+  </div>
+
+  <div class="library-card">
+      <div class="library-icon">📚</div>
+      <h3>Material descargable</h3>
+      <p>Próximamente</p>
+  </div>
+
+</div>
   </div>
 
 </div>
