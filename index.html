@@ -650,6 +650,62 @@ section.hero-cover{
 .search-box{
   padding-left:52px;
 }
+    .header-right{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+
+.header-search{
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:#f4f7f2;
+  border:1px solid #d7e3dc;
+  border-radius:24px;
+  padding:6px 12px;
+}
+
+.header-search input{
+  border:none;
+  outline:none;
+  background:transparent;
+  width:150px;
+  font-size:.9rem;
+}
+
+.header-search span{
+  margin-right:6px;
+}
+
+.header-search-results{
+  position:absolute;
+  top:46px;
+  right:0;
+  width:320px;
+  background:white;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  z-index:50;
+  overflow:hidden;
+}
+
+.header-search-results .search-result{
+  padding:14px 16px;
+  border-left:none;
+  border-bottom:1px solid #edf2ef;
+  background:white;
+}
+
+.header-search-results .search-result h3{
+  font-size:.95rem;
+  margin:0 0 4px;
+}
+
+.header-search-results .search-result p{
+  font-size:.82rem;
+  margin:0 0 6px;
+}
   </style>
 </head>
 
@@ -662,13 +718,27 @@ section.hero-cover{
      style="height:80px;">
 </div>
   <nav>
+   <div class="header-right">
+
+  <nav>
     <a href="#iniciativa">La iniciativa</a>
     <a href="#cultivos">Cultivos</a>
     <a href="#tecnologias">Tecnologías</a>
-    <a href="#buscador">Buscar</a>
     <a href="#webinars">Webinars</a>
     <a href="#aliados">Aliados</a>
   </nav>
+
+  <div class="header-search">
+    <span>🔎</span>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Buscar..."
+    >
+    <div id="searchResults" class="header-search-results"></div>
+  </div>
+
+</div>
 </header>
 
 <section class="hero-cover">
@@ -793,25 +863,7 @@ section.hero-cover{
       <p>Mejor adopción, mayor confianza y uso adecuado de las tecnologías.</p>
     </div>
   </div>
-</section>
-<section id="buscador" class="search-section">
-  <h2>Buscar en Academia Bio</h2>
-  <p class="intro">
-    Encuentra contenidos por cultivo, tecnología o tipo de recurso.
-  </p>
 
-  <div class="search-wrapper">
-  <span class="search-icon">🔎</span>
-  <input
-    type="text"
-    id="searchInput"
-    class="search-box"
-    placeholder="Buscar: aguacate, biocontrol, café, webinar..."
-  >
-</div>
-
-  <div id="searchResults" class="search-results"></div>
-</section>
 <section id="cultivos">
   <h2>Explorar por cultivo</h2>
   <p class="intro">
