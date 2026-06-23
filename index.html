@@ -586,6 +586,54 @@ section.hero-cover{
   color:white;
   box-shadow:0 6px 14px rgba(15,77,56,.18);
 }
+    .search-section{
+  background:#ffffff;
+}
+
+.search-box{
+  width:100%;
+  max-width:700px;
+  padding:16px 20px;
+  border-radius:30px;
+  border:1px solid #d7e3dc;
+  font-size:1rem;
+  outline:none;
+  box-shadow:0 8px 22px rgba(0,0,0,.05);
+}
+
+.search-box:focus{
+  border-color:#1f7a55;
+}
+
+.search-results{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+.search-result{
+  background:#f8faf9;
+  border-radius:16px;
+  padding:20px;
+  border-left:5px solid #8bc53f;
+}
+
+.search-result h3{
+  margin:0 0 8px;
+  color:#0f4d38;
+}
+
+.search-result p{
+  margin:0 0 12px;
+  color:#5f6c72;
+}
+
+.search-result a{
+  color:#1f7a55;
+  font-weight:700;
+  text-decoration:none;
+}
   </style>
 </head>
 
@@ -729,7 +777,21 @@ section.hero-cover{
     </div>
   </div>
 </section>
+<section id="buscador" class="search-section">
+  <h2>Buscar en Academia Bio</h2>
+  <p class="intro">
+    Encuentra contenidos por cultivo, tecnología o tipo de recurso.
+  </p>
 
+  <input
+    type="text"
+    id="searchInput"
+    class="search-box"
+    placeholder="Buscar: aguacate, biocontrol, café, webinar..."
+  >
+
+  <div id="searchResults" class="search-results"></div>
+</section>
 <section id="cultivos">
   <h2>Explorar por cultivo</h2>
   <p class="intro">
@@ -941,6 +1003,108 @@ section.hero-cover{
   <p>Academia Bio © 2026</p>
   <p>ASOBIOCOL · Plataforma Hemisférica de Bioinsumos · IICA</p>
 </footer>
+<script>
+const searchData = [
+  {
+    title: "Aguacate Hass",
+    description: "Contenidos técnicos sobre manejo integrado con bioinsumos en aguacate.",
+    url: "aguacate.html",
+    keywords: "aguacate hass cultivo bioinsumos productividad"
+  },
+  {
+    title: "Arroz",
+    description: "Soluciones biológicas para sistemas arroceros.",
+    url: "arroz.html",
+    keywords: "arroz cultivo biofertilización biocontrol"
+  },
+  {
+    title: "Banano",
+    description: "Sanidad, nutrición y manejo del estrés en banano.",
+    url: "banano.html",
+    keywords: "banano cultivo sanidad nutrición estrés"
+  },
+  {
+    title: "Berries",
+    description: "Contenidos para arándanos, uchuva y fresa.",
+    url: "berries.html",
+    keywords: "berries arándanos uchuva fresa cultivo"
+  },
+  {
+    title: "Café",
+    description: "Aplicaciones técnicas para sistemas cafeteros.",
+    url: "cafe.html",
+    keywords: "café cafe caficultura cultivo bioinsumos"
+  },
+  {
+    title: "Flores",
+    description: "Bioinsumos para sistemas ornamentales y floricultura.",
+    url: "flores.html",
+    keywords: "flores floricultura ornamentales cultivo"
+  },
+  {
+    title: "Biocontrol",
+    description: "Tecnologías biológicas para manejo de plagas y enfermedades.",
+    url: "biocontrol.html",
+    keywords: "biocontrol plagas enfermedades control biológico"
+  },
+  {
+    title: "Biofertilización",
+    description: "Procesos biológicos asociados a la nutrición vegetal.",
+    url: "biofertilizacion.html",
+    keywords: "biofertilización biofertilizacion nutrición vegetal microorganismos"
+  },
+  {
+    title: "Bioestimulación",
+    description: "Tecnologías para mejorar el desempeño fisiológico y vigor del cultivo.",
+    url: "bioestimulacion.html",
+    keywords: "bioestimulación bioestimulacion fisiología vigor cultivo"
+  },
+  {
+    title: "Estrés abiótico",
+    description: "Herramientas para enfrentar condiciones ambientales adversas.",
+    url: "estres-abiotico.html",
+    keywords: "estrés abiótico estres sequía salinidad temperatura"
+  },
+  {
+    title: "Manejo integrado",
+    description: "Uso de bioinsumos dentro de estrategias agronómicas completas.",
+    url: "manejo-integrado.html",
+    keywords: "manejo integrado bioinsumos estrategia agronómica"
+  }
+];
 
+const input = document.getElementById("searchInput");
+const results = document.getElementById("searchResults");
+
+input.addEventListener("input", function(){
+  const query = input.value.toLowerCase().trim();
+  results.innerHTML = "";
+
+  if(query.length < 2){
+    return;
+  }
+
+  const filtered = searchData.filter(item =>
+    item.title.toLowerCase().includes(query) ||
+    item.description.toLowerCase().includes(query) ||
+    item.keywords.toLowerCase().includes(query)
+  );
+
+  if(filtered.length === 0){
+    results.innerHTML = "<p>No se encontraron resultados.</p>";
+    return;
+  }
+
+  filtered.forEach(item => {
+    results.innerHTML += `
+      <div class="search-result">
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+        <a href="${item.url}">Ver contenido →</a>
+      </div>
+    `;
+  });
+});
+</script>
 </body>
 </html>
