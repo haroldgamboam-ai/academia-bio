@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>bioestimulación | Academia Bio</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f7f2;
+  color:#1f2933;
+}
+
+.topbar{
+  background:white;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+.topbar img{
+  height:100px;
+}
+
+.topbar nav a{
+  margin-left:22px;
+  text-decoration:none;
+  color:#1f2933;
+  font-weight:600;
+}
+
+.hero{
+  background:linear-gradient(135deg,#0f4d38,#1f7a55);
+  color:white;
+  padding:90px 8%;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:4rem;
+  margin:0 0 15px;
+}
+
+.hero p{
+  max-width:850px;
+  margin:auto;
+  font-size:1.15rem;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 8%;
+}
+
+.card{
+  background:white;
+  border-radius:20px;
+  padding:35px;
+  margin-bottom:30px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+h2{
+  color:#0f4d38;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:25px;
+  text-decoration:none;
+  color:#0f4d38;
+  font-weight:bold;
+}
+
+.placeholder{
+  background:#f8faf9;
+  border-left:5px solid #8bc53f;
+}
+  .library-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:25px;
+}
+
+.library-card{
+    background:#f8faf9;
+    border-radius:16px;
+    padding:25px;
+    text-align:center;
+    border:1px solid #e5ece8;
+    transition:.2s;
+}
+
+.library-card:hover{
+    transform:translateY(-4px);
+}
+
+.library-icon{
+    font-size:2.5rem;
+    margin-bottom:12px;
+}
+
+.library-card h3{
+    color:#0f4d38;
+    margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a href="index.html">
+    <img src="assets/logos/academia-bio-logo.png.png" alt="Academia Bio">
+  </a>
+
+  <nav>
+    <a href="index.html#cultivos">Cultivos</a>
+    <a href="index.html#tecnologias">Tecnologías</a>
+    <a href="index.html#webinars">Webinars</a>
+    <a href="index.html#aliados">Aliados</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>bioestimulación</h1>
+  <p>
+    Espacio dedicado a tecnologías biológicas orientadas a mejorar el desempeño fisiológico y la productividad de los cultivos.
+  </p>
+</section>
+
+<div class="container">
+
+  <a href="index.html" class="back">← Volver a Academia Bio</a>
+
+  <div class="card">
+    <h2>Descripción general</h2>
+    <p>
+      La bioestimulación agrupa herramientas biológicas utilizadas para fortalecer procesos fisiológicos de las plantas y mejorar su desempeño productivo.
+    </p>
+    <p>
+      En esta sección se reunirán contenidos técnicos, experiencias de validación,
+      materiales formativos y recursos relacionados con agentes de control biológico
+      y otras soluciones aplicadas al manejo sanitario.
+    </p>
+  </div>
+
+  <div class="card placeholder">
+    <h2>Contenidos disponibles próximamente</h2>
+    <p>
+      En esta sección se reunirán contenidos técnicos, experiencias de validación, materiales formativos y recursos relacionados con bioestimulantes y tecnologías afines.
+    </p>
+  </div>
+
+  <div class="card placeholder">
+    <h2>Biblioteca técnica</h2>
+
+<div class="library-grid">
+
+  <div class="library-card">
+      <div class="library-icon">📄</div>
+      <h3>Fichas técnicas</h3>
+      <p>Próximamente</p>
+  </div>
+
+  <div class="library-card">
+      <div class="library-icon">🎥</div>
+      <h3>Webinars</h3>
+      <p>Próximamente</p>
+  </div>
+
+  <div class="library-card">
+      <div class="library-icon">📊</div>
+      <h3>Casos de validación</h3>
+      <p>Próximamente</p>
+  </div>
+
+  <div class="library-card">
+      <div class="library-icon">📚</div>
+      <h3>Material descargable</h3>
+      <p>Próximamente</p>
+  </div>
+
+</div>
+  </div>
+
+</div>
+
+</body>
+</html>
