@@ -530,6 +530,62 @@ section.hero-cover{
 .btn-webinar:hover{
   background:#0f4d38;
 }
+    /* Diseño mejorado para tarjetas de tecnología */
+
+.tech-card{
+  text-align:center;
+  min-height:240px;
+  cursor:pointer;
+  text-decoration:none !important;
+  color:inherit !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:white;
+  border-radius:18px;
+  padding:28px 22px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+  border:1px solid rgba(15,77,56,.08);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.tech-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 34px rgba(0,0,0,.12);
+}
+
+.tech-card h3,
+.tech-card p{
+  text-decoration:none !important;
+}
+
+.tech-card h3{
+  color:#0f4d38;
+  margin:0 0 12px;
+  font-size:1.15rem;
+}
+
+.tech-card p{
+  color:#5f6c72;
+  margin:0;
+  font-size:.95rem;
+  line-height:1.5;
+}
+
+.tech-icon{
+  width:64px;
+  height:64px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  margin-bottom:18px;
+  background:linear-gradient(135deg,#8bc53f,#1f7a55);
+  color:white;
+  box-shadow:0 6px 14px rgba(15,77,56,.18);
+}
   </style>
 </head>
 
